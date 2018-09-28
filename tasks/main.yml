@@ -1,2 +1,15 @@
 ---
-- include_tasks: discord-install.yml tags=discord,install,discord:install
+- name: get current version of discord package available
+  uri:
+    url: "{{ discord_package_url }}"
+    method: HEAD
+  register: discord_package_result
+- name: check if discord is already installed or needs update
+  command: dpkg-query --showformat='${Version}' --show discord
+  register: discord_installed
+  failed_when: discord_installed.rc > 1
+  changed_when: (discord_installed.rc == 1) and (discord_installed.stdout != (discord_package_result.url | urlsplit('path') | regex_search('(\d\.\d\.\d)')))
+- name: install or update discord
+  apt:
+    deb: "{{ discord_package_url }}"
+  when: (discord_installed.rc == 1) and (discord_installed.stdout != (discord_package_result.url | urlsplit('path') | regex_search('(\d\.\d\.\d)')))
