@@ -1,6 +1,7 @@
 galaxy_info:
   author: dyindude
   description: install or update discord
+  role_name: discord
   company: dyindude.net
   issue_tracker_url: "https://github.com/dyindude/ansible-role-discord"
   license: BSD
