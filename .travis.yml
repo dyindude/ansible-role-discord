@@ -9,14 +9,6 @@ matrix:
       dist: trusty
     - os: linux
       dist: xenial
-    - os: linux
-      dist: bionic
-    - os: linux
-      dist: stretch
-    - os: linux
-      dist: jessie
-    - os: linux
-      dist: buster
 
 env:
   - SITE=test.yml
