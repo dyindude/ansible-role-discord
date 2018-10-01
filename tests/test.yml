@@ -1,11 +1,5 @@
 ---
 - hosts: localhost
   remote_user: root
-  tasks:
-    - name: install httplib2
-      pip:
-        name: httplib2
-- hosts: localhost
-  remote_user: root
   roles:
     - discord
