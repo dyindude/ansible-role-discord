@@ -15,8 +15,8 @@ before_script:
   - cd discord
 
 install:
-  # Install Ansible.
-  - pip install 'ansible==1.8'
+  # Install required packages
+  - pip install 'ansible==1.8' httplib2
 
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; echo 'host_key_checking = False'; } >> ansible.cfg"
