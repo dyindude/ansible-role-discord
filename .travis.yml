@@ -29,8 +29,6 @@ install:
   - "{ echo '[defaults]'; echo 'roles_path = ../'; echo 'host_key_checking = False'; } >> ansible.cfg"
 
 script:
-  # Check syntax
-  - "ansible-playbook -i tests/inventory tests/$SITE --check"
   # Run twice to check idempotency
   - "ansible-playbook -i tests/inventory tests/$SITE"
   - "ansible-playbook -i tests/inventory tests/$SITE"
