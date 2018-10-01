@@ -7,12 +7,10 @@ galaxy_info:
   license: BSD
   min_ansible_version: 2.1.1.0
   platforms:
-    - name: Debian
-      versions:
-        - all
     - name: Ubuntu
       versions:
-        - all
+        - trusty
+        - xenial
   galaxy_tags:
     - discord
     - debian
