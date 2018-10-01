@@ -15,7 +15,7 @@ Example Playbook
 
     - hosts: laptop
       roles:
-         - discord
+         - dyindude.discord
 
 License
 -------

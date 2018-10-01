@@ -18,8 +18,8 @@ before_install:
 
 before_script:
   - cd ../
-  - mv ansible-role-discord discord
-  - cd discord
+  - mv ansible-role-discord dyindude.discord
+  - cd dyindude.discord
 
 install:
   # Install Ansible.
