@@ -13,6 +13,7 @@
   apt:
     name: libatomic1
     state: latest
+  become: yes
 - name: install or update discord
   apt:
     deb: "{{ discord_package_url }}"
