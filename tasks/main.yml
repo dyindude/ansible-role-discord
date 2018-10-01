@@ -13,7 +13,7 @@
   apt:
     name: libatomic1
     state: latest
-    cache_valid_time: 300
+    update_cache: yes
   become: yes
 - name: install or update discord
   apt:
