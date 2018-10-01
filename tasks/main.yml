@@ -13,3 +13,4 @@
   apt:
     deb: "{{ discord_package_url }}"
   when: (discord_installed.rc == 1) and (discord_installed.stdout != (discord_package_result.url | regex_search('(\d\.\d\.\d)')))
+  become: yes
