@@ -1,4 +1,4 @@
-dyindude.discord
+dyindude.discord ![travis build status](https://travis-ci.com/dyindude/ansible-role-discord.svg?branch=master)
 =========
 
 This role checks the current available version of discord for Linux from discordapp.com and installs or updates the package.
