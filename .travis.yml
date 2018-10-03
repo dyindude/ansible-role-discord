@@ -9,6 +9,14 @@ matrix:
       dist: trusty
     - os: linux
       dist: xenial
+    - os: linux
+      dist: bionic
+      addons:
+        apt:
+          sources:
+            bionic-updates
+        packages:
+          - libatomic1
 
 env:
   - SITE=test.yml
