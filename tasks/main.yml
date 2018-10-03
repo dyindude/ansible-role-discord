@@ -9,12 +9,6 @@
   register: discord_installed
   failed_when: discord_installed.rc > 1
   changed_when: (discord_installed.rc == 1) or (discord_installed.stdout != (discord_package_result.url | regex_search('(\d\.\d\.\d)')))
-- name: install or update libatomic1
-  apt:
-    name: libatomic1
-    state: latest
-    update_cache: yes
-  become: yes
 - name: install or update discord
   apt:
     deb: "{{ discord_package_url }}"
