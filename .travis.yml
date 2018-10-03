@@ -15,8 +15,8 @@ matrix:
         apt:
           sources:
             bionic-updates
-        packages:
-          - libatomic1
+          packages:
+            - libatomic1
 
 env:
   - SITE=test.yml
