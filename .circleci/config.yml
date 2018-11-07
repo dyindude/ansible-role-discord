@@ -38,7 +38,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-          apt-get -y install build-essential python python-dev python-virtualenv
+            apt-get -y install build-essential python python-dev python-virtualenv
             python -m virtualenv ~/venv
             . ~/venv/bin/activate
             pip install --upgrade pip "ansible==$ANSIBLE_VERSION"
