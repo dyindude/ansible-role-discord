@@ -48,6 +48,6 @@ jobs:
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
+            . ~/venv/bin/activate
             ansible-playbook -i tests/inventory tests/test.yml
             ansible-playbook -i tests/inventory tests/test.yml
