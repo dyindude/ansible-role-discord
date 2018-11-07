@@ -34,8 +34,10 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install "ansible==$ANSIBLE_VERSION"
-            "{ echo '[defaults]'; echo 'roles_path = ../'; echo 'host_key_checking = False'; } >> ansible.cfg"
+            pip install --upgrade pip "ansible==$ANSIBLE_VERSION"
+            echo '[defaults]' >> ansible.cfg
+            echo 'roles_path = ../' >> ansible.cfg
+            echo 'host_key_checking = False' >> ansible.cfg"
 
       - save_cache:
           paths:
