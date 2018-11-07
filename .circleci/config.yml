@@ -28,12 +28,17 @@ jobs:
           - v1-dep-{{ .Environment.ANSIBLE_VERSION }}
           # fallback to using the latest cache if no exact match is found
           - v1-dep-
-
+      #https://github.com/circleci/circleci-docs/issues/1740
+      #https://circleci.com/docs/2.0/custom-images/#adding-required-and-custom-tools-or-files
+      - run:
+          name: install circleci dependencies
+          command: |
+            apt-get update
+            apt-get -y install git ssh tar gzip ca-certificates
       - run:
           name: install dependencies
           command: |
-            apt-get update
-            apt-get -y install build-essential python python-virtualenv
+          apt-get -y install build-essential python python-dev python-virtualenv
             python -m virtualenv ~/venv
             . ~/venv/bin/activate
             pip install --upgrade pip "ansible==$ANSIBLE_VERSION"
