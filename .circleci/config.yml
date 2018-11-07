@@ -22,6 +22,12 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Environment Variable Interpolation
+          command: |
+            echo 'export ANSIBLE_VERSION="$ANSIBLE_VERSION"' >> $BASH_ENV
+            source $BASH_ENV
+
       #circleci dependencies need to be installed before any circleci specific commands (e.g. restore_cache)
       #https://github.com/circleci/circleci-docs/issues/1740
       #https://circleci.com/docs/2.0/custom-images/#adding-required-and-custom-tools-or-files
