@@ -32,7 +32,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python -m venv venv
+            python -m virtualenv venv
             . venv/bin/activate
             pip install --upgrade pip "ansible==$ANSIBLE_VERSION"
             echo '[defaults]' >> ansible.cfg
